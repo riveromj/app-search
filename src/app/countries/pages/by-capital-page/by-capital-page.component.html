@@ -2,9 +2,16 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-search-box [placeholder]="'Buscar por Capital'"></app-search-box>
+        <app-search-box (onValue)="searchByCapital($event)" [placeholder]="'Buscar por Capital'"></app-search-box>
     </div>
 </div>
 <div class="row">
-    <div class="col">tabla de resultados</div>
+    <div class="col">tabla de resultados
+        <hr>
+        <ul>
+            <li *ngFor="let country of countries">
+                {{country.capital}}
+            </li>
+        </ul>
+    </div>
 </div>
